@@ -1,0 +1,26 @@
+version: "3"
+
+networks: 
+  laravel:
+
+services: 
+  php:
+    image: php:7.2-fpm-alpine
+    ports: 
+      - "9000:9000"
+    volumes:
+      # local_directory:container_directory
+      - ./src:/code
+    networks: 
+      - laravel
+    
+  nginx:
+    image: nginx:1.19.0-alpine
+    ports: 
+      - 8080:80
+    volumes:
+      - ./src:/code
+      # code supaya nginx bisa menjalankan php
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks: 
+      - laravel
