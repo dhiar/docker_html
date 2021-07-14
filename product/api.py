@@ -1,5 +1,10 @@
 from flask import Flask
 from flask_restful import Resource, Api
+from country import get_first_country
+
+countries = ['Italy', 'Inggris', 'Brazil']
+
+print(get_first_country(countries))
 
 app = Flask(__name__)
 api = Api(app)
@@ -11,7 +16,8 @@ class Product(Resource):
         'Ice Cream',
         'Chocolate',
         'Fruit'
-      ]
+      ], 
+      'first_country': get_first_country(countries)
     }
 
 api.add_resource(Product, '/')
