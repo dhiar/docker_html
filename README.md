@@ -11,3 +11,8 @@ Build & run
 ```
 docker-compose -f docker-compose.yml up --build
 ```
+
+Remove volume yang tidak digunakan
+```
+docker volume prune
+```
