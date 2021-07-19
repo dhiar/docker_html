@@ -13,7 +13,7 @@ def get_widgets() :
   mydb = mysql.connector.connect(
     host="mysqldb",
     user="root",
-    password="p@ssw0rd1",
+    password="manager247",
     database="inventory"
   )
   cursor = mydb.cursor()
@@ -37,7 +37,7 @@ def db_init():
   mydb = mysql.connector.connect(
     host="mysqldb",
     user="root",
-    password="p@ssw0rd1"
+    password="manager247"
   )
   mycursor = mydb.cursor()
   mycursor.execute("DROP DATABASE IF EXISTS inventory")
@@ -47,7 +47,7 @@ def db_init():
   mydb = mysql.connector.connect(
     host="mysqldb",
     user="root",
-    password="p@ssw0rd1",
+    password="manager247",
     database="inventory"
   )
   mycursor = mydb.cursor()
@@ -57,7 +57,7 @@ def db_init():
   mydb = mysql.connector.connect(
     host="mysqldb",
     user="root",
-    password="p@ssw0rd1",
+    password="manager247",
     database="inventory"
   )
   mycursor = mydb.cursor()

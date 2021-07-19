@@ -15,9 +15,9 @@ services:
  mysqldb:
   image: mysql:8.0.21
   ports:
-  - 3333:3306
+  - 3344:3306
   environment:
-  - MYSQL_ROOT_PASSWORD=p@ssw0rd1
+  - MYSQL_ROOT_PASSWORD=manager247
   volumes:
   - mysql:/var/lib/mysql
   - mysql_config:/etc/mysql
