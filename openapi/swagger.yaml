@@ -8,10 +8,10 @@ produces:
   - application/json
 
 paths:
-  /predictions:
+  /users:
     post:
-      operationId: app.post_predictions
-      summary: Predicts categories of the given news articles
+      operationId: app.post_users
+      summary: Users categories of the given data user
       parameters:
         - name: query
           in: body
@@ -21,34 +21,38 @@ paths:
               $ref: '#/definitions/Query'
       responses:
         200:
-          description: Returns predicted categories
+          description: Returns user data
           schema:
             type: array
             items:
-              $ref: '#/definitions/Prediction'
+              $ref: '#/definitions/User'
 
 definitions:
-  Prediction:
+  User:
     type: object
     required:
-      - category
-      - text
+      - username
+      - gender
     properties:
-      category:
+      username:
         type: string
-        description: Predicted category of the feedback
-        example: "irrelevant"
+        description: Username of the user
+        example: "Ahmad"
         readOnly: true
-      text:
+      gender:
         type: string
-        description: query text
-        example: "Everything is fine"
+        description: Gender of the user
+        example: "Laki-laki"
         readOnly: true
   Query:
     type: object
     required:
-      - text
+      - username
+      - gender
     properties:
-      text:
+      username:
         type: string
-        description: text to predict
+        description: username to User
+      gender:
+        type: string
+        description: gender to User
