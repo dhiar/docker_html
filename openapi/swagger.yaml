@@ -10,7 +10,7 @@ produces:
 paths:
   /users:
     post:
-      operationId: app.post_users
+      operationId: user.post_users
       summary: Users categories of the given data user
       parameters:
         - name: query
@@ -18,7 +18,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/Query'
+              $ref: '#/definitions/QueryUser'
       responses:
         200:
           description: Returns user data
@@ -26,6 +26,24 @@ paths:
             type: array
             items:
               $ref: '#/definitions/User'
+  /occupations:
+    post:
+      operationId: occupation.post_occupation
+      summary: Occupation of the given data
+      parameters:
+        - name: query
+          in: body
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/QueryOccupation'
+      responses:
+        200:
+          description: Returns occupation data
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Occupation'
 
 definitions:
   User:
@@ -44,7 +62,7 @@ definitions:
         description: Gender of the user
         example: "Laki-laki"
         readOnly: true
-  Query:
+  QueryUser:
     type: object
     required:
       - username
@@ -56,3 +74,31 @@ definitions:
       gender:
         type: string
         description: gender to User
+  Occupation:
+    type: object
+    required:
+      - company_name
+      - job
+    properties:
+      company_name:
+        type: string
+        description: company_name of the Occupation
+        example: "Ahmad"
+        readOnly: true
+      job:
+        type: string
+        description: Job of the Occupation
+        example: "Programmer"
+        readOnly: true
+  QueryOccupation:
+    type: object
+    required:
+      - company_name
+      - job
+    properties:
+      username:
+        type: string
+        description: company_name to Occupation
+      job:
+        type: string
+        description: job to Occupation

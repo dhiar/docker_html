@@ -1,10 +1,6 @@
 from flask import Flask
 import connexion
 
-def post_users(query):
-  users = []
-  return query
-
 options = {"swagger_ui": True}
 app = connexion.FlaskApp(__name__, specification_dir='openapi/',
   options=options)
