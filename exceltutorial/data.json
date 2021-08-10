@@ -1,0 +1,12 @@
+{
+  "Januari" : {
+    "food" : "rice",
+    "drink" : "tea",
+    "price" : 12000
+  },
+  "Februari" : {
+    "food" : "steak",
+    "drink" : "ice lemon",
+    "price" : 33000
+  }
+}
